@@ -48,16 +48,16 @@ function find_posts() {
     $count = 0;
 
     foreach ($posts as $post) {
+        if ($post['post_id'] < 129379 || empty(get_permalink($post['post_id']))) {
+            continue;
+        }
+
         if ($count++ > 50) {
             break;
         }
 
-        if (empty(get_permalink($post['post_id']))) {
-            continue;
-        }
-
         printf(
-            "<a href='%s'>%s</a> - Views: %s<br>",
+            "<p>%s<br>%s<br>Views: %s</p>",
             get_permalink($post['post_id']),
             get_the_title($post['post_id']),
             $post['pageviews']
@@ -71,16 +71,16 @@ function find_posts() {
     $count = 0;
 
     foreach ($posts as $post) {
+        if ($post['post_id'] < 129379 || empty(get_permalink($post['post_id']))) {
+            continue;
+        }
+
         if ($count++ > 50) {
             break;
         }
 
-        if (empty(get_permalink($post['post_id']))) {
-            continue;
-        }
-
         printf(
-            "<a href='%s'>%s</a> - Facebook: %s<br>",
+            "<p>%s<br>%s<br>Facebook: %s</p>",
             get_permalink($post['post_id']),
             get_the_title($post['post_id']),
             $post['fb']
@@ -94,16 +94,16 @@ function find_posts() {
     $count = 0;
 
     foreach ($posts as $post) {
+        if ($post['post_id'] < 129379 || empty(get_permalink($post['post_id']))) {
+            continue;
+        }
+
         if ($count++ > 50) {
             break;
         }
 
-        if (empty(get_permalink($post['post_id']))) {
-            continue;
-        }
-
         printf(
-            "<a href='%s'>%s</a> - VK: %s<br>",
+            "<p>%s<br>%s<br>VK: %s</p>",
             get_permalink($post['post_id']),
             get_the_title($post['post_id']),
             $post['vk']
